@@ -23,56 +23,130 @@ const perguntas = [
     pergunta: "Qual é o plural de pão?",
     alternativas: ["Pãos", "Pães"],
     correta: 1
+  },
+  {
+    pergunta: "Qual é o plural de papel?",
+    alternativas: ["Papéis", "Papeis"],
+    correta: 0
+  },
+  {
+    pergunta: "Qual frase está correta?",
+    alternativas: ["Com certeza.", "Concerteza."],
+    correta: 0
+  },
+  {
+    pergunta: "Qual palavra está correta?",
+    alternativas: ["Asterisco", "Asterístico"],
+    correta: 0
+  },
+  {
+    pergunta: "Qual é a forma correta?",
+    alternativas: ["Há dois anos.", "A dois anos."],
+    correta: 0
+  },
+  {
+    pergunta: "Qual verbo está correto?",
+    alternativas: ["Eu trouxe.", "Eu trousse."],
+    correta: 0
+  },
+  {
+    pergunta: "Qual palavra está correta?",
+    alternativas: ["Berinjela", "Beringela"],
+    correta: 0
+  },
+  {
+    pergunta: "Qual é a forma correta?",
+    alternativas: ["Mau humor", "Mal humor"],
+    correta: 0
+  },
+  {
+    pergunta: "Complete: Ele _____ cedo.",
+    alternativas: ["chegou", "chego"],
+    correta: 0
+  },
+  {
+    pergunta: "Qual palavra está correta?",
+    alternativas: ["Privilégio", "Previlégio"],
+    correta: 0
+  },
+  {
+    pergunta: "Qual é o antônimo de 'alto'?",
+    alternativas: ["Baixo", "Grande"],
+    correta: 0
+  },
+  {
+    pergunta: "Qual palavra está correta?",
+    alternativas: ["Exagero", "Ezagero"],
+    correta: 0
+  },
+  {
+    pergunta: "Qual frase está correta?",
+    alternativas: ["Eu vi ela.", "Eu a vi."],
+    correta: 1
+  },
+  {
+    pergunta: "Qual é o plural de 'cão'?",
+    alternativas: ["Cãos", "Cães"],
+    correta: 1
+  },
+  {
+    pergunta: "Qual palavra está correta?",
+    alternativas: ["Através", "Atravéz"],
+    correta: 0
+  },
+  {
+    pergunta: "Qual palavra está correta?",
+    alternativas: ["Exceção", "Excessão"],
+    correta: 0
+  },
+  {
+    pergunta: "Qual é a forma correta?",
+    alternativas: ["Porque", "Por que"],
+    correta: 1
+  },
+  {
+    pergunta: "Qual palavra está correta?",
+    alternativas: ["Beneficente", "Beneficiente"],
+    correta: 0
+  },
+  {
+    pergunta: "Qual frase está correta?",
+    alternativas: ["Faz cinco anos.", "Fazem cinco anos."],
+    correta: 0
+  },
+  {
+    pergunta: "Qual palavra está correta?",
+    alternativas: ["Receber", "Reseber"],
+    correta: 0
+  },
+  {
+    pergunta: "Qual é a forma correta?",
+    alternativas: ["Sessão", "Seção"],
+    correta: 0
+  },
+  {
+    pergunta: "Qual palavra está correta?",
+    alternativas: ["Enxergar", "Enchergar"],
+    correta: 0
+  },
+  {
+    pergunta: "Qual palavra está correta?",
+    alternativas: ["Ansioso", "Ancioso"],
+    correta: 0
+  },
+  {
+    pergunta: "Qual frase está correta?",
+    alternativas: ["Trouxe o livro.", "Truxe o livro."],
+    correta: 0
+  },
+  {
+    pergunta: "Qual palavra está correta?",
+    alternativas: ["Hospedagem", "Ospedagem"],
+    correta: 0
+  },
+  {
+    pergunta: "Qual é o feminino de 'ator'?",
+    alternativas: ["Atriz", "Atora"],
+    correta: 0
   }
 ];
-
-let indice = 0;
-let pontos = 0;
-
-const pergunta = document.getElementById("pergunta");
-const alternativas = document.getElementById("alternativas");
-const pontuacao = document.getElementById("pontuacao");
-const barra = document.getElementById("barra");
-
-function atualizarBarra() {
-    barra.style.width = (pontos / perguntas.length) * 100 + "%";
-}
-
-function mostrarPergunta() {
-    if (indice >= perguntas.length) {
-        pergunta.innerHTML = "🎉 Você terminou!";
-        alternativas.innerHTML =
-            `<h3>Sua pontuação: ${pontos}/${perguntas.length}</h3>`;
-        return;
-    }
-
-    pergunta.textContent = perguntas[indice].pergunta;
-    alternativas.innerHTML = "";
-
-    perguntas[indice].alternativas.forEach((texto, i) => {
-        const botao = document.createElement("button");
-        botao.textContent = texto;
-        botao.style.display = "block";
-        botao.style.margin = "10px auto";
-        botao.style.padding = "12px";
-        botao.style.width = "80%";
-
-        botao.onclick = () => responder(i);
-
-        alternativas.appendChild(botao);
-    });
-}
-
-function responder(escolha) {
-    if (escolha === perguntas[indice].correta) {
-        pontos += 2;
-    }
-
-    pontuacao.textContent = pontos + " pontos";
-    atualizarBarra();
-
-    indice++;
-    mostrarPergunta();
-}
-
-mostrarPergunta();
