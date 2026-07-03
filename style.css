@@ -1,98 +1,69 @@
-const perguntas = [
-  {
-    pergunta: "Qual é a forma correta?",
-    opcoes: ["Agente chegou cedo.", "A gente chegou cedo."],
-    resposta: 1
-  },
-  {
-    pergunta: "Complete a frase: Eu ____ estudar português.",
-    opcoes: ["gosto de", "gosto em"],
-    resposta: 0
-  },
-  {
-    pergunta: "Qual palavra está escrita corretamente?",
-    opcoes: ["Excessão", "Exceção"],
-    resposta: 1
-  },
-  {
-    pergunta: "Qual é o plural de 'cidadão'?",
-    opcoes: ["Cidadões", "Cidadãos"],
-    resposta: 1
-  },
-  {
-    pergunta: "Qual frase está correta?",
-    opcoes: ["Faz dois anos que estudo.", "Fazem dois anos que estudo."],
-    resposta: 0
-  }
-];
-
-let indice = 0;
-let pontos = Number(localStorage.getItem("pontos")) || 0;
-
-const pergunta = document.getElementById("pergunta");
-const alternativas = document.getElementById("alternativas");
-const score = document.getElementById("score");
-const barra = document.getElementById("barra");
-const proxima = document.getElementById("proxima");
-
-function atualizarPlacar() {
-  score.textContent = `${pontos} pontos`;
-  barra.value = Math.min(pontos, 100);
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-function carregarPergunta() {
-  proxima.style.display = "none";
-  alternativas.innerHTML = "";
-
-  if (indice >= perguntas.length) {
-    pergunta.innerHTML = "🎉 Parabéns! Você concluiu os exercícios.";
-    alternativas.innerHTML = `
-      <p><strong>Pontuação final:</strong> ${pontos} pontos.</p>
-      <button onclick="reiniciar()">Refazer Exercícios</button>
-    `;
-    return;
-  }
-
-  const atual = perguntas[indice];
-  pergunta.textContent = atual.pergunta;
-
-  atual.opcoes.forEach((texto, i) => {
-    const botao = document.createElement("button");
-    botao.textContent = texto;
-
-    botao.onclick = () => {
-      const botoes = alternativas.querySelectorAll("button");
-      botoes.forEach(b => b.disabled = true);
-
-      if (i === atual.resposta) {
-        botao.classList.add("correta");
-        pontos += 10;
-        localStorage.setItem("pontos", pontos);
-        atualizarPlacar();
-      } else {
-        botao.classList.add("errada");
-        botoes[atual.resposta].classList.add("correta");
-      }
-
-      proxima.style.display = "block";
-    };
-
-    alternativas.appendChild(botao);
-  });
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f4f7fb;
+    color:#333;
 }
 
-proxima.onclick = () => {
-  indice++;
-  carregarPergunta();
-};
-
-function reiniciar() {
-  indice = 0;
-  pontos = 0;
-  localStorage.setItem("pontos", 0);
-  atualizarPlacar();
-  carregarPergunta();
+header{
+    background:#1565c0;
+    color:#fff;
+    text-align:center;
+    padding:30px;
 }
 
-atualizarPlacar();
-carregarPergunta();
+.container{
+    max-width:900px;
+    margin:30px auto;
+    padding:20px;
+}
+
+.card{
+    background:#fff;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,.2);
+    margin-bottom:20px;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    margin:10px 0;
+    border:none;
+    border-radius:6px;
+    background:#1565c0;
+    color:#fff;
+    font-size:18px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#0d47a1;
+}
+
+.progresso{
+    width:100%;
+    height:18px;
+    background:#ddd;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+#barra{
+    height:100%;
+    width:0%;
+    background:#29b6f6;
+    transition:.3s;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    margin-top:30px;
+}
