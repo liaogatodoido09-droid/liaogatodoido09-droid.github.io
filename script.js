@@ -254,7 +254,6 @@ const perguntas = [
     alternativas: ["Difícil", "Dificil"],
     correta: 0
   }
-];
 let indice = 0;
 let pontos = 0;
 
@@ -304,3 +303,4 @@ function responder(escolha) {
 }
 
 mostrarPergunta();
+];
