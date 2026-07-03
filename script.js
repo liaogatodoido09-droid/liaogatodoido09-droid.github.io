@@ -1,306 +1,98 @@
 const perguntas = [
   {
     pergunta: "Qual é a forma correta?",
-    alternativas: ["Agente chegou cedo.", "A gente chegou cedo."],
-    correta: 1
+    opcoes: ["Agente chegou cedo.", "A gente chegou cedo."],
+    resposta: 1
   },
   {
-    pergunta: "Qual é a forma correta?",
-    alternativas: ["Mas", "Mais"],
-    correta: 0
-  },
-  {
-    pergunta: "Complete a frase: Eu _____ feliz.",
-    alternativas: ["estou", "estouu"],
-    correta: 0
+    pergunta: "Complete a frase: Eu ____ estudar português.",
+    opcoes: ["gosto de", "gosto em"],
+    resposta: 0
   },
   {
     pergunta: "Qual palavra está escrita corretamente?",
-    alternativas: ["Exceção", "Eseção"],
-    correta: 0
+    opcoes: ["Excessão", "Exceção"],
+    resposta: 1
   },
   {
-    pergunta: "Qual é o plural de pão?",
-    alternativas: ["Pãos", "Pães"],
-    correta: 1
-  },
-  {
-    pergunta: "Qual é o plural de papel?",
-    alternativas: ["Papéis", "Papeis"],
-    correta: 0
+    pergunta: "Qual é o plural de 'cidadão'?",
+    opcoes: ["Cidadões", "Cidadãos"],
+    resposta: 1
   },
   {
     pergunta: "Qual frase está correta?",
-    alternativas: ["Com certeza.", "Concerteza."],
-    correta: 0
-  },
-  {
-    pergunta: "Qual palavra está correta?",
-    alternativas: ["Asterisco", "Asterístico"],
-    correta: 0
-  },
-  {
-    pergunta: "Qual é a forma correta?",
-    alternativas: ["Há dois anos.", "A dois anos."],
-    correta: 0
-  },
-  {
-    pergunta: "Qual verbo está correto?",
-    alternativas: ["Eu trouxe.", "Eu trousse."],
-    correta: 0
-  },
-  {
-    pergunta: "Qual palavra está correta?",
-    alternativas: ["Berinjela", "Beringela"],
-    correta: 0
-  },
-  {
-    pergunta: "Qual é a forma correta?",
-    alternativas: ["Mau humor", "Mal humor"],
-    correta: 0
-  },
-  {
-    pergunta: "Complete: Ele _____ cedo.",
-    alternativas: ["chegou", "chego"],
-    correta: 0
-  },
-  {
-    pergunta: "Qual palavra está correta?",
-    alternativas: ["Privilégio", "Previlégio"],
-    correta: 0
-  },
-  {
-    pergunta: "Qual é o antônimo de 'alto'?",
-    alternativas: ["Baixo", "Grande"],
-    correta: 0
-  },
-  {
-    pergunta: "Qual palavra está correta?",
-    alternativas: ["Exagero", "Ezagero"],
-    correta: 0
-  },
-  {
-    pergunta: "Qual frase está correta?",
-    alternativas: ["Eu vi ela.", "Eu a vi."],
-    correta: 1
-  },
-  {
-    pergunta: "Qual é o plural de 'cão'?",
-    alternativas: ["Cãos", "Cães"],
-    correta: 1
-  },
-  {
-    pergunta: "Qual palavra está correta?",
-    alternativas: ["Através", "Atravéz"],
-    correta: 0
-  },
-  {
-    pergunta: "Qual palavra está correta?",
-    alternativas: ["Exceção", "Excessão"],
-    correta: 0
-  },
-  {
-    pergunta: "Qual é a forma correta?",
-    alternativas: ["Porque", "Por que"],
-    correta: 1
-  },
-  {
-    pergunta: "Qual palavra está correta?",
-    alternativas: ["Beneficente", "Beneficiente"],
-    correta: 0
-  },
-  {
-    pergunta: "Qual frase está correta?",
-    alternativas: ["Faz cinco anos.", "Fazem cinco anos."],
-    correta: 0
-  },
-  {
-    pergunta: "Qual palavra está correta?",
-    alternativas: ["Receber", "Reseber"],
-    correta: 0
-  },
-  {
-    pergunta: "Qual é a forma correta?",
-    alternativas: ["Sessão", "Seção"],
-    correta: 0
-  },
-  {
-    pergunta: "Qual palavra está correta?",
-    alternativas: ["Enxergar", "Enchergar"],
-    correta: 0
-  },
-  {
-    pergunta: "Qual palavra está correta?",
-    alternativas: ["Ansioso", "Ancioso"],
-    correta: 0
-  },
-  {
-    pergunta: "Qual frase está correta?",
-    alternativas: ["Trouxe o livro.", "Truxe o livro."],
-    correta: 0
-  },
-  {
-    pergunta: "Qual palavra está correta?",
-    alternativas: ["Hospedagem", "Ospedagem"],
-    correta: 0
-  },
-  {
-    pergunta: "Qual é o feminino de 'ator'?",
-    alternativas: ["Atriz", "Atora"],
-    correta: 0
-  },
-  {
-    pergunta: "Qual palavra está correta?",
-    alternativas: ["Conosco", "Com nós"],
-    correta: 0
-  },
-  {
-    pergunta: "Qual frase está correta?",
-    alternativas: ["Eu fiz o trabalho.", "Eu fizemos o trabalho."],
-    correta: 0
-  },
-  {
-    pergunta: "Qual palavra está correta?",
-    alternativas: ["Manteiga", "Mantega"],
-    correta: 0
-  },
-  {
-    pergunta: "Qual palavra está correta?",
-    alternativas: ["Lâmpada", "Lampada"],
-    correta: 0
-  },
-  {
-    pergunta: "Qual palavra está correta?",
-    alternativas: ["Ônibus", "Onibus"],
-    correta: 0
-  },
-  {
-    pergunta: "Qual frase está correta?",
-    alternativas: ["Ele veio ontem.", "Ele vinheram ontem."],
-    correta: 0
-  },
-  {
-    pergunta: "Qual palavra está correta?",
-    alternativas: ["Cabeleireiro", "Cabelereiro"],
-    correta: 0
-  },
-  {
-    pergunta: "Qual palavra está correta?",
-    alternativas: ["Paralisação", "Paralização"],
-    correta: 0
-  },
-  {
-    pergunta: "Qual frase está correta?",
-    alternativas: ["Eles disseram a verdade.", "Eles falaram mentira."],
-    correta: 0
-  },
-  {
-    pergunta: "Qual palavra está correta?",
-    alternativas: ["Pesquisa", "Pesquiza"],
-    correta: 0
-  },
-  {
-    pergunta: "Qual palavra está correta?",
-    alternativas: ["Beleza", "Belesa"],
-    correta: 0
-  },
-  {
-    pergunta: "Qual palavra está correta?",
-    alternativas: ["Natureza", "Naturezaa"],
-    correta: 0
-  },
-  {
-    pergunta: "Qual palavra está correta?",
-    alternativas: ["Problema", "Poblema"],
-    correta: 0
-  },
-  {
-    pergunta: "Qual palavra está correta?",
-    alternativas: ["Importante", "Inportante"],
-    correta: 0
-  },
-  {
-    pergunta: "Qual palavra está correta?",
-    alternativas: ["Necessário", "Necessario"],
-    correta: 0
-  },
-  {
-    pergunta: "Qual frase está correta?",
-    alternativas: ["Nós estudamos.", "Nós estudo."],
-    correta: 0
-  },
-  {
-    pergunta: "Qual palavra está correta?",
-    alternativas: ["Experiência", "Esperiência"],
-    correta: 0
-  },
-  {
-    pergunta: "Qual palavra está correta?",
-    alternativas: ["Família", "Familia"],
-    correta: 0
-  },
-  {
-    pergunta: "Qual palavra está correta?",
-    alternativas: ["História", "Historia"],
-    correta: 0
-  },
-  {
-    pergunta: "Qual palavra está correta?",
-    alternativas: ["Lógico", "Logico"],
-    correta: 0
-  },
-  {
-    pergunta: "Qual palavra está correta?",
-    alternativas: ["Difícil", "Dificil"],
-    correta: 0
+    opcoes: ["Faz dois anos que estudo.", "Fazem dois anos que estudo."],
+    resposta: 0
   }
+];
+
 let indice = 0;
-let pontos = 0;
+let pontos = Number(localStorage.getItem("pontos")) || 0;
 
 const pergunta = document.getElementById("pergunta");
 const alternativas = document.getElementById("alternativas");
-const pontuacao = document.getElementById("pontuacao");
+const score = document.getElementById("score");
 const barra = document.getElementById("barra");
+const proxima = document.getElementById("proxima");
 
-function atualizarBarra() {
-    if (barra) {
-        barra.style.width = ((indice / perguntas.length) * 100) + "%";
-    }
+function atualizarPlacar() {
+  score.textContent = `${pontos} pontos`;
+  barra.value = Math.min(pontos, 100);
 }
 
-function mostrarPergunta() {
-    if (indice >= perguntas.length) {
-        pergunta.innerHTML = "🎉 Parabéns! Você terminou o quiz!";
-        alternativas.innerHTML = `<h3>Sua pontuação: ${pontos}/${perguntas.length}</h3>`;
-        atualizarBarra();
-        return;
-    }
+function carregarPergunta() {
+  proxima.style.display = "none";
+  alternativas.innerHTML = "";
 
-    const atual = perguntas[indice];
-    pergunta.textContent = atual.pergunta;
-    alternativas.innerHTML = "";
+  if (indice >= perguntas.length) {
+    pergunta.innerHTML = "🎉 Parabéns! Você concluiu os exercícios.";
+    alternativas.innerHTML = `
+      <p><strong>Pontuação final:</strong> ${pontos} pontos.</p>
+      <button onclick="reiniciar()">Refazer Exercícios</button>
+    `;
+    return;
+  }
 
-    atual.alternativas.forEach((texto, i) => {
-        const botao = document.createElement("button");
-        botao.textContent = texto;
+  const atual = perguntas[indice];
+  pergunta.textContent = atual.pergunta;
 
-        botao.onclick = () => responder(i);
+  atual.opcoes.forEach((texto, i) => {
+    const botao = document.createElement("button");
+    botao.textContent = texto;
 
-        alternativas.appendChild(botao);
-    });
+    botao.onclick = () => {
+      const botoes = alternativas.querySelectorAll("button");
+      botoes.forEach(b => b.disabled = true);
 
-    pontuacao.textContent = pontos + " pontos";
-    atualizarBarra();
+      if (i === atual.resposta) {
+        botao.classList.add("correta");
+        pontos += 10;
+        localStorage.setItem("pontos", pontos);
+        atualizarPlacar();
+      } else {
+        botao.classList.add("errada");
+        botoes[atual.resposta].classList.add("correta");
+      }
+
+      proxima.style.display = "block";
+    };
+
+    alternativas.appendChild(botao);
+  });
 }
 
-function responder(escolha) {
-    if (escolha === perguntas[indice].correta) {
-        pontos++;
-    }
+proxima.onclick = () => {
+  indice++;
+  carregarPergunta();
+};
 
-    indice++;
-    mostrarPergunta();
+function reiniciar() {
+  indice = 0;
+  pontos = 0;
+  localStorage.setItem("pontos", 0);
+  atualizarPlacar();
+  carregarPergunta();
 }
 
-mostrarPergunta();
-];
+atualizarPlacar();
+carregarPergunta();
