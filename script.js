@@ -255,3 +255,52 @@ const perguntas = [
     correta: 0
   }
 ];
+let indice = 0;
+let pontos = 0;
+
+const pergunta = document.getElementById("pergunta");
+const alternativas = document.getElementById("alternativas");
+const pontuacao = document.getElementById("pontuacao");
+const barra = document.getElementById("barra");
+
+function atualizarBarra() {
+    if (barra) {
+        barra.style.width = ((indice / perguntas.length) * 100) + "%";
+    }
+}
+
+function mostrarPergunta() {
+    if (indice >= perguntas.length) {
+        pergunta.innerHTML = "🎉 Parabéns! Você terminou o quiz!";
+        alternativas.innerHTML = `<h3>Sua pontuação: ${pontos}/${perguntas.length}</h3>`;
+        atualizarBarra();
+        return;
+    }
+
+    const atual = perguntas[indice];
+    pergunta.textContent = atual.pergunta;
+    alternativas.innerHTML = "";
+
+    atual.alternativas.forEach((texto, i) => {
+        const botao = document.createElement("button");
+        botao.textContent = texto;
+
+        botao.onclick = () => responder(i);
+
+        alternativas.appendChild(botao);
+    });
+
+    pontuacao.textContent = pontos + " pontos";
+    atualizarBarra();
+}
+
+function responder(escolha) {
+    if (escolha === perguntas[indice].correta) {
+        pontos++;
+    }
+
+    indice++;
+    mostrarPergunta();
+}
+
+mostrarPergunta();
